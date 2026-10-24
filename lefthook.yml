@@ -1,0 +1,19 @@
+# Lefthook configuration.
+#
+# `pre-push` runs the fast verification gate. It is the same shared entry point
+# (`tooling/verify.ps1 -Fast`) the Verify workflow uses, so the two cannot drift.
+#
+# Install once per clone:
+#
+#   lefthook install
+#
+# Bypass intentionally with `git push --no-verify` or `LEFTHOOK=0`.
+pre-push:
+  commands:
+    verify:
+      run: |
+        if [ -f tooling/verify.ps1 ] && command -v pwsh >/dev/null 2>&1; then
+          pwsh ./tooling/verify.ps1 -Fast
+        else
+          echo "pwsh or tooling/verify.ps1 missing in this worktree; skipping pre-push verification"
+        fi
