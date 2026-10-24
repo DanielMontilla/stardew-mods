@@ -1,0 +1,32 @@
+---
+title: Stardew Mods
+description: Documentation and data reference for these Stardew Valley mods.
+template: splash
+hero:
+  tagline: Guides, progression details, and data pulled straight from the mods folder.
+  actions:
+    - text: Browse mods
+      link: /mods/
+      icon: right-arrow
+    - text: Installation guide
+      link: /guides/installing/
+      icon: open-book
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid>
+	<Card title="Generated, not copied" icon="setting">
+		Each mod page is built from its `manifest.json`, README, `assets/`, and `i18n/` files, so the
+		documentation cannot drift from the code.
+	</Card>
+	<Card title="Data you can read" icon="list-format">
+		Destination tables, unlock costs, and other asset data are rendered from the same JSON the mod
+		loads at runtime.
+	</Card>
+	<Card title="Sprites included" icon="picture">
+		Images under a mod's `assets/` folder are bundled at build time and shown pixel-perfect at their
+		original resolution.
+	</Card>
+</CardGrid>

@@ -1,0 +1,20 @@
+---
+import { Badge } from '@astrojs/starlight/components';
+import { withBase } from '../lib/base';
+import type { Mod } from '../lib/mods';
+
+interface Props {
+	mod: Mod;
+}
+
+const { mod } = Astro.props;
+---
+
+<a class="mod-card" href={withBase(`/mods/${mod.slug}/`)}>
+	<span class="mod-card__title">
+		{mod.manifest.Name}
+		<Badge text={`v${mod.version}`} variant="tip" />
+	</span>
+	<span class="mod-card__description">{mod.manifest.Description}</span>
+	<span class="mod-card__meta">by {mod.manifest.Author}</span>
+</a>

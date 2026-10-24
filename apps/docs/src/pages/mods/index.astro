@@ -1,0 +1,32 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import ModCard from '../../components/ModCard.astro';
+import { getMods } from '../../lib/mods';
+
+const mods = await getMods();
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Mods',
+		description: 'Documentation and data reference for every mod in this repository.',
+	}}
+>
+	<p>
+		Every page here is generated at build time from the mod's <code>manifest.json</code>,
+		<code>README.md</code>, <code>assets/</code>, and <code>i18n/</code> files. Nothing is copied
+		by hand.
+	</p>
+
+	{
+		mods.length > 0 ? (
+			<div class="mod-grid">
+				{mods.map((mod) => (
+					<ModCard mod={mod} />
+				))}
+			</div>
+		) : (
+			<p>No mods with a <code>manifest.json</code> found.</p>
+		)
+	}
+</StarlightPage>

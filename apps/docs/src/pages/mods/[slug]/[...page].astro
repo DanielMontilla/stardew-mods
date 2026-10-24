@@ -1,0 +1,52 @@
+---
+import { Badge } from '@astrojs/starlight/components';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { renderAllAssetTables, renderMarkdown } from '../../../lib/markdown';
+import { buildModVariants } from '../../../lib/mod-data';
+import { getMods } from '../../../lib/mods';
+
+export async function getStaticPaths() {
+	const mods = await getMods();
+
+	return mods.flatMap((mod) =>
+		mod.pages.map((page) => ({
+			params: {
+				slug: mod.slug,
+				page: page.slug === '' ? undefined : page.slug,
+			},
+			props: { mod, page },
+		})),
+	);
+}
+
+const { mod, page } = Astro.props;
+const variants = await buildModVariants(mod);
+const body = renderMarkdown(page.body, variants, page.file);
+
+// The overview appends every asset file unless the README already places tables.
+const autoTables =
+	page.isOverview && !/\{\{\s*table:/.test(page.body) ? renderAllAssetTables(variants) : '';
+---
+
+<StarlightPage
+	frontmatter={{
+		title: page.title,
+		description: page.description,
+	}}
+>
+	{
+		page.isOverview && (
+			<div class="mod-header">
+				<Badge text={`v${mod.version}`} variant="tip" />
+				<Badge text={mod.manifest.Author} />
+				<code>{mod.manifest.UniqueID}</code>
+			</div>
+		)
+	}
+
+	<div
+		class="sl-markdown-content"
+		data-page-mode-default={variants[0].defaultMode.toLowerCase()}
+		set:html={body + autoTables}
+	/>
+</StarlightPage>

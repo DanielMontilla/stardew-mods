@@ -1,0 +1,90 @@
+---
+import { Icon } from '@astrojs/starlight/components';
+import { getRepoModes } from '../lib/mod-data';
+
+const { modes, defaultMode } = await getRepoModes();
+
+const icons = {
+	easy: 'heart',
+	realistic: 'star',
+	hard: 'rocket',
+} as const;
+
+const iconFor = (mode: string) => {
+	const key = mode.toLowerCase();
+	return key in icons ? icons[key as keyof typeof icons] : 'setting';
+};
+---
+
+{
+	modes.length > 1 && (
+		<div class="mode-switch" role="group" aria-label="Difficulty mode">
+			{modes.map((mode) => (
+				<button
+					type="button"
+					data-mode-option={mode}
+					aria-pressed={mode === defaultMode ? 'true' : 'false'}
+					aria-label={`Difficulty: ${mode}`}
+					title={mode}
+				>
+					<Icon name={iconFor(mode)} size="1rem" />
+					<span class="mode-switch__label">{mode}</span>
+				</button>
+			))}
+		</div>
+	)
+}
+
+<style>
+	.mode-switch {
+		display: flex;
+		gap: 0.125rem;
+		align-items: center;
+		padding: 0.15rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 999px;
+	}
+
+	.mode-switch button {
+		display: flex;
+		gap: 0.35rem;
+		align-items: center;
+		padding: 0.3rem 0.55rem;
+		border: 0;
+		border-radius: 999px;
+		background: transparent;
+		color: var(--sl-color-gray-2);
+		font: inherit;
+		font-size: var(--sl-text-sm);
+		line-height: 1;
+		white-space: nowrap;
+		cursor: pointer;
+	}
+
+	.mode-switch button:hover {
+		color: var(--sl-color-white);
+	}
+
+	.mode-switch button[aria-pressed='true'] {
+		background: var(--sl-color-accent);
+		color: var(--sl-color-black);
+	}
+
+	.mode-switch button:focus-visible {
+		outline: 2px solid var(--sl-color-accent-high);
+		outline-offset: 1px;
+	}
+
+	/* Header space is tight; the mobile menu keeps the labels. */
+	@media (max-width: 90rem) {
+		:global(.right-group) .mode-switch__label {
+			display: none;
+		}
+	}
+
+	@media print {
+		.mode-switch {
+			display: none;
+		}
+	}
+</style>

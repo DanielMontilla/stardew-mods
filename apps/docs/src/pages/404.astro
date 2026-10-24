@@ -1,0 +1,16 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { withBase } from '../lib/base';
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Page not found',
+		description: 'That page does not exist.',
+	}}
+>
+	<p>
+		That page doesn't exist. Try the <a href={withBase('/mods/')}>mod catalog</a> or the
+		<a href={withBase('/guides/installing/')}>installation guide</a>.
+	</p>
+</StarlightPage>

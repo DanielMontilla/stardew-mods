@@ -1,0 +1,255 @@
+:root {
+	--sl-color-accent-low: #3a2a12;
+	--sl-color-accent: #c9822f;
+	--sl-color-accent-high: #f3d9a4;
+	--mod-radius: 0.75rem;
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent-low: #f7e8c9;
+	--sl-color-accent: #a35f12;
+	--sl-color-accent-high: #4a2a05;
+}
+
+/* Mod catalog */
+
+.mod-grid {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+	margin-block-start: 1.5rem;
+}
+
+.mod-card {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 1rem 1.25rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: var(--mod-radius);
+	background: var(--sl-color-black);
+	color: var(--sl-color-white);
+	text-decoration: none;
+	transition:
+		border-color 0.15s ease,
+		transform 0.15s ease;
+}
+
+.mod-card:hover {
+	border-color: var(--sl-color-accent);
+	transform: translateY(-2px);
+}
+
+.mod-card__title {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: var(--sl-text-lg);
+	font-weight: 600;
+}
+
+.mod-card__description {
+	color: var(--sl-color-gray-2);
+}
+
+.mod-card__meta {
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-gray-3);
+}
+
+/* Mod page */
+
+.mod-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+	margin-block-end: 1.5rem;
+}
+
+.mod-header code {
+	padding: 0.15rem 0.4rem;
+	border-radius: 0.35rem;
+	background: var(--sl-color-gray-6);
+	font-size: var(--sl-text-sm);
+}
+
+.mod-assets {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	padding: 0;
+	list-style: none;
+}
+
+.mod-assets li {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.35rem;
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-gray-3);
+}
+
+/* Mods are pixel art: never smooth the sprites. */
+img.pixel {
+	max-width: 100%;
+	height: auto;
+	image-rendering: pixelated;
+}
+
+.mod-raw {
+	margin-block: 1rem;
+}
+
+/* Asset data tables */
+
+.json-table-wrap {
+	overflow-x: auto;
+	margin-block: 1rem;
+}
+
+.json-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: var(--sl-text-sm);
+}
+
+.json-table th,
+.json-table td {
+	padding: 0.4rem 0.6rem;
+	border: 1px solid var(--sl-color-gray-5);
+	text-align: left;
+	vertical-align: top;
+}
+
+.json-table th {
+	background: var(--sl-color-gray-6);
+	font-weight: 600;
+}
+
+.json-table tbody tr:nth-child(even) {
+	background: var(--sl-color-gray-7, transparent);
+}
+
+.spot-steps {
+	margin-block: 0.5rem 0;
+	padding-inline-start: 1.25rem;
+}
+
+.spot-steps li + li {
+	margin-block-start: 0.25rem;
+}
+
+/* Spot detail card */
+
+.spot-card {
+	margin-block: 1.5rem;
+	padding: 1.25rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 0.75rem;
+	background: var(--sl-color-gray-7, transparent);
+}
+
+.spot-card__facts {
+	display: grid;
+	gap: 0.75rem 1.5rem;
+	grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+	margin: 0;
+}
+
+.spot-card__facts dt {
+	color: var(--sl-color-gray-3);
+	font-size: var(--sl-text-xs);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.spot-card__facts dd {
+	margin: 0.15rem 0 0;
+	font-weight: 600;
+}
+
+.spot-card h3 {
+	margin-block: 1.5rem 0.75rem;
+}
+
+.spot-stages {
+	display: grid;
+	gap: 0.75rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.spot-stage {
+	display: flex;
+	gap: 1rem;
+	padding: 0.9rem 1rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 0.5rem;
+}
+
+.spot-stage__index {
+	display: grid;
+	flex: 0 0 1.75rem;
+	place-items: center;
+	height: 1.75rem;
+	border-radius: 50%;
+	background: var(--sl-color-accent);
+	color: var(--sl-color-black);
+	font-weight: 700;
+}
+
+.spot-stage__body {
+	min-width: 0;
+}
+
+.spot-stage h4 {
+	margin: 0;
+	font-size: var(--sl-text-base);
+}
+
+.spot-stage p {
+	margin: 0.35rem 0 0;
+}
+
+.spot-stage__cost {
+	color: var(--sl-color-accent-high);
+	font-weight: 600;
+}
+
+.spot-stage__wait,
+.spot-stage__condition,
+.spot-stage__npc {
+	color: var(--sl-color-gray-3);
+	font-size: var(--sl-text-sm);
+}
+
+.sl-markdown-content img {
+	height: auto;
+	max-width: 100%;
+	border-radius: 0.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.mod-card {
+		transition: none;
+	}
+}
+
+/* Mode variants: the pre-paint script sets <html data-mode>, CSS does the rest. */
+
+[data-mode-text],
+[data-mode-block] {
+	display: none;
+}
+
+html:not([data-mode]) [data-mode-text][data-mode-default] {
+	display: inline;
+}
+
+html:not([data-mode]) [data-mode-block][data-mode-default] {
+	display: block;
+}
+
