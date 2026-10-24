@@ -55,20 +55,22 @@ If the user wants to read or analyze reference source, navigate to the reference
 
 | Reference | Path | URL |
 |-----------|------|-----|
-| alchemy-effect | .agents/references/alchemy-effect | https://github.com/alchemy-run/alchemy-effect.git |
-| drizzle-orm | .agents/references/drizzle-orm | https://github.com/drizzle-team/drizzle-orm |
-| effect | .agents/references/effect | https://github.com/Effect-TS/effect-smol |
+| bouhm-mods | .agents/references/bouhm-mods | https://github.com/Bouhm/stardew-valley-mods |
+| jibblestein-mods | .agents/references/jibblestein-mods | https://github.com/Jibblestein/StardewMods |
+| khloe-mods | .agents/references/khloe-mods | https://github.com/KhloeLeclair/StardewMods |
 | montflow | .agents/references/montflow | https://github.com/montflow/montflow.git |
-| orpc | .agents/references/orpc | https://github.com/middleapi/orpc.git |
-| shadcn-svelte | .agents/references/shadcn-svelte | https://github.com/huntabyte/shadcn-svelte |
-| sveltekit | .agents/references/sveltekit | https://github.com/sveltejs/kit.git |
-| signoz | .agents/references/signoz | https://github.com/SigNoz/signoz |
-| workers-oauth-provider | .agents/references/workers-oauth-provider | https://github.com/cloudflare/workers-oauth-provider |
-| effect-cf | .agents/references/effect-cf | https://github.com/jbt95/effect-cf |
-| vitest | .agents/references/vitest | https://github.com/vitest-dev/vitest |
-| anti-slop | .agents/references/anti-slop | https://github.com/dmmulroy/anti-slop.git |
-| opentui | .agents/references/opentui | https://github.com/sst/opentui.git |
-| opencode | .agents/references/opencode | https://github.com/sst/opencode.git |
-| pi-subagents | .agents/references/pi-subagents | https://github.com/nicobailon/pi-subagents.git |
+| pathoschild-mods | .agents/references/pathoschild-mods | https://github.com/Pathoschild/StardewMods |
+| shockah-mods | .agents/references/shockah-mods | https://github.com/Shockah/Stardew-Valley-Mods |
+| smapi | .agents/references/smapi | https://github.com/Pathoschild/SMAPI |
+| spacechase0-mods | .agents/references/spacechase0-mods | https://github.com/spacechase0/StardewValleyMods |
+| stardew-access | .agents/references/stardew-access | https://github.com/stardew-access/stardew-access |
+| stardew-valley-decompiled | .agents/references/stardew-valley-decompiled | https://github.com/Dannode36/StardewValleyDecompiled |
+
+Stardew notes:
+
+- `smapi` includes `src/SMAPI.ModBuildConfig`, `docs/`, and the full API source.
+- `pathoschild-mods` includes Content Patcher and several reference-quality mods (Lookup Anything, Automate, Data Layers).
+- `stardew-valley-decompiled` is game version 1.6 decompiled to .NET 6 — use it to understand vanilla classes and methods.
+- `spacechase0-mods` shows framework-mod patterns (SpaceCore and friends). `shockah-mods` and `khloe-mods` are UI-heavy examples. `stardew-access` is a large Harmony/accessibility codebase.
 
 To add a new reference, use `adding-references` skill.
