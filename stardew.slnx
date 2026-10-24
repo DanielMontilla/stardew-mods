@@ -1,2 +1,5 @@
 <Solution>
+  <Folder Name="/mods/">
+    <Project Path="mods/ImmersiveMinecarts/ImmersiveMinecarts.csproj" />
+  </Folder>
 </Solution>

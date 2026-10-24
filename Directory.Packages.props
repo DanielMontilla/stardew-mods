@@ -7,6 +7,8 @@
 
   <!-- Pin every package version here. Projects reference packages without versions. -->
   <ItemGroup>
+    <!-- Stardew Valley / SMAPI -->
+    <PackageVersion Include="Pathoschild.Stardew.ModBuildConfig" Version="4.4.0" />
   </ItemGroup>
 
 </Project>
