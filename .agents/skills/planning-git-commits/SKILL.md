@@ -58,7 +58,7 @@ Use conventional commits with scope in parentheses derived from file paths:
 
 Derive scope from file paths using these rules:
 
-1. **Package/app directory**: If the path starts with `packages/<name>/`, `apps/<name>/`, `services/<name>/`, or `tools/<name>/`, use `<name>` as the scope. Example: `packages/api/src/index.ts` → `api`, `apps/web/pages/index.tsx` → `web`.
+1. **Package/app directory**: If the path starts with `packages/<name>/`, `apps/<name>/`, `mods/<name>/`, `services/<name>/`, or `tools/<name>/`, use `<name>` as the scope. Example: `packages/api/src/index.ts` → `api`, `apps/web/pages/index.tsx` → `web`.
 2. **Top-level directory**: For files not under a recognized prefix, use the top-level directory name. Example: `.github/workflows/ci.yml` → `ci`, `docs/architecture.md` → `docs`.
 3. **Root files**: Files at the repository root (e.g., `turbo.json`, `package.json`, `README.md`) get no scope.
 4. **Multiple scopes in one commit group**: If grouped files span multiple scopes, use the most common scope or no scope if evenly split.
