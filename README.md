@@ -50,3 +50,17 @@ Or run the gate: `pwsh ./tooling/verify.ps1` (Windows: `tooling\verify.cmd`).
 ## Skills
 
 Skills live in `.agents/skills/`. They are discovered by scanning the directory; no index to maintain.
+
+## License
+
+[CC BY-NC-SA 4.0](LICENSE) © Daniel Montilla.
+
+**Free for everyone, except commercially:**
+
+- **Use, modify, fork, redistribute** — yes, for any noncommercial purpose.
+- **Attribution** — credit Daniel Montilla, and state what you changed if you modified it.
+- **ShareAlike** — forks and modified versions must carry this same license.
+- **Commercial use requires permission** — open an issue before using this, or anything derived from it, in a monetized product or service.
+
+Note: restricting commercial use means this is a *source-available* license, not an OSI-approved open source license.
+
