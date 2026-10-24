@@ -1,0 +1,16 @@
+{
+    "Name": "Immersive Minecarts",
+    "Author": "Daniel Montilla",
+    "Version": "%ProjectVersion%",
+    "Description": "Adds minecart destinations that each player unlocks with gold and regional resources.",
+    "UniqueID": "DanielMontilla.ImmersiveMinecarts",
+    "EntryDll": "ImmersiveMinecarts.dll",
+    "MinimumApiVersion": "4.1.0",
+    "UpdateKeys": [],
+    "Dependencies": [
+        {
+            "UniqueID": "spacechase0.GenericModConfigMenu",
+            "IsRequired": false
+        }
+    ]
+}

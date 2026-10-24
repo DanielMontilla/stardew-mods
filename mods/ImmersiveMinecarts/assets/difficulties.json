@@ -1,0 +1,26 @@
+{
+    "Easy": {
+        "DisplayNameKey": "difficulty.easy.name",
+        "DescriptionKey": "difficulty.easy.description",
+        "UnlockGoldMultiplier": 0.5,
+        "UnlockItemMultiplier": 0.5,
+        "RidePriceMultiplier": 0,
+        "RequireDiscovery": false
+    },
+    "Hard": {
+        "DisplayNameKey": "difficulty.hard.name",
+        "DescriptionKey": "difficulty.hard.description",
+        "UnlockGoldMultiplier": 2,
+        "UnlockItemMultiplier": 2,
+        "RidePriceMultiplier": 1.5,
+        "RequireDiscovery": true
+    },
+    "Realistic": {
+        "DisplayNameKey": "difficulty.realistic.name",
+        "DescriptionKey": "difficulty.realistic.description",
+        "UnlockGoldMultiplier": 1,
+        "UnlockItemMultiplier": 1,
+        "RidePriceMultiplier": 1,
+        "RequireDiscovery": true
+    }
+}

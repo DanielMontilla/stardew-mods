@@ -1,0 +1,207 @@
+{
+    "Spots": [
+        {
+            "Id": "FarmHome",
+            "Network": "Default",
+            "DisplayNameKey": "spot.farm-home.name",
+            "TargetLocation": "Farm",
+            "TargetTile": { "X": 64, "Y": 16 },
+            "UseMainFarmHouseEntry": true,
+            "TargetDirection": "down",
+            "RidePrice": 50,
+            "Unlock": {
+                "Gold": 50000,
+                "Items": [
+                    { "ItemId": "(O)334", "Count": 50 },
+                    { "ItemId": "(O)335", "Count": 30 },
+                    { "ItemId": "(O)336", "Count": 15 },
+                    { "ItemId": "(O)337", "Count": 5 },
+                    { "ItemId": "(O)709", "Count": 50 }
+                ]
+            }
+        },
+        {
+            "Id": "Mountain",
+            "Network": "Default",
+            "DisplayNameKey": "spot.mountain.name",
+            "TargetLocation": "Mountain",
+            "TargetTile": { "X": 53, "Y": 7 },
+            "TargetDirection": "down",
+            "RidePrice": 200,
+            "Unlock": {
+                "Condition": "PLAYER_VISITED_LOCATION Current Mountain",
+                "Steps": [
+                    {
+                        "Id": "hermit-favor",
+                        "NameKey": "step.mountain.hermit.name",
+                        "DescriptionKey": "step.mountain.hermit.description",
+                        "WaitDays": 0,
+                        "NpcFlow": [
+                            {
+                                "Npc": "Clint",
+                                "Topic": "ImmersiveMinecarts.Mountain.Hermit.Clint",
+                                "DialogueKey": "dialogue.mountain.hermit.clint"
+                            },
+                            {
+                                "Npc": "Robin",
+                                "Topic": "ImmersiveMinecarts.Mountain.Hermit.Robin",
+                                "DialogueKey": "dialogue.mountain.hermit.robin"
+                            }
+                        ],
+                        "Items": [
+                            { "ItemId": "(O)709", "Count": 100 },
+                            { "ItemId": "(O)334", "Count": 50 },
+                            { "ItemId": "(O)335", "Count": 25 }
+                        ]
+                    },
+                    {
+                        "Id": "rebuild-line",
+                        "NameKey": "step.mountain.rebuild.name",
+                        "DescriptionKey": "step.mountain.rebuild.description",
+                        "Gold": 75000,
+                        "WaitDays": 3,
+                        "Items": [
+                            { "ItemId": "(O)335", "Count": 50 },
+                            { "ItemId": "(O)336", "Count": 25 },
+                            { "ItemId": "(O)337", "Count": 15 }
+                        ]
+                    },
+                    {
+                        "Id": "test-run",
+                        "NameKey": "step.mountain.test.name",
+                        "DescriptionKey": "step.mountain.test.description",
+                        "Gold": 75000,
+                        "WaitDays": 5,
+                        "Items": [
+                            { "ItemId": "(O)337", "Count": 10 },
+                            { "ItemId": "(O)74", "Count": 5 }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "Id": "SecretWoods",
+            "Network": "Default",
+            "DisplayNameKey": "spot.secret-woods.name",
+            "TargetLocation": "Woods",
+            "TargetTile": { "X": 46, "Y": 5 },
+            "TargetDirection": "down",
+            "RidePrice": 150,
+            "Unlock": {
+                "Gold": 75000,
+                "Condition": "PLAYER_VISITED_LOCATION Current Woods",
+                "Items": [
+                    { "ItemId": "(O)709", "Count": 100 },
+                    { "ItemId": "(O)336", "Count": 30 },
+                    { "ItemId": "(O)337", "Count": 15 }
+                ]
+            }
+        },
+        {
+            "Id": "Desert",
+            "Network": "Default",
+            "DisplayNameKey": "spot.desert.name",
+            "TargetLocation": "Desert",
+            "TargetTile": { "X": 32, "Y": 43 },
+            "TargetDirection": "down",
+            "RidePrice": 250,
+            "Unlock": {
+                "Condition": "PLAYER_VISITED_LOCATION Current Desert",
+                "Steps": [
+                    {
+                        "Id": "survey",
+                        "NameKey": "step.desert.survey.name",
+                        "DescriptionKey": "step.desert.survey.description",
+                        "Gold": 25000,
+                        "WaitDays": 0,
+                        "Items": [
+                            { "ItemId": "(O)336", "Count": 10 },
+                            { "ItemId": "(O)90", "Count": 10 }
+                        ]
+                    },
+                    {
+                        "Id": "lay-tracks",
+                        "NameKey": "step.desert.tracks.name",
+                        "DescriptionKey": "step.desert.tracks.description",
+                        "Gold": 35000,
+                        "WaitDays": 3,
+                        "Items": [
+                            { "ItemId": "(O)336", "Count": 20 },
+                            { "ItemId": "(O)337", "Count": 10 },
+                            { "ItemId": "(O)88", "Count": 10 }
+                        ]
+                    },
+                    {
+                        "Id": "inspection",
+                        "NameKey": "step.desert.inspection.name",
+                        "DescriptionKey": "step.desert.inspection.description",
+                        "Gold": 40000,
+                        "WaitDays": 5,
+                        "Items": [
+                            { "ItemId": "(O)336", "Count": 20 },
+                            { "ItemId": "(O)337", "Count": 15 },
+                            { "ItemId": "(O)90", "Count": 10 },
+                            { "ItemId": "(O)74", "Count": 5 }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "Id": "GingerIsland",
+            "Network": "Default",
+            "DisplayNameKey": "spot.ginger-island.name",
+            "TargetLocation": "IslandWest",
+            "TargetTile": { "X": 63, "Y": 44 },
+            "TargetDirection": "down",
+            "RidePrice": 500,
+            "Unlock": {
+                "Condition": "PLAYER_VISITED_LOCATION Current IslandWest",
+                "Steps": [
+                    {
+                        "Id": "chart-route",
+                        "NameKey": "step.ginger.chart.name",
+                        "DescriptionKey": "step.ginger.chart.description",
+                        "Gold": 60000,
+                        "WaitDays": 0,
+                        "Items": [
+                            { "ItemId": "(O)336", "Count": 25 },
+                            { "ItemId": "(O)337", "Count": 10 },
+                            { "ItemId": "(O)829", "Count": 20 }
+                        ]
+                    },
+                    {
+                        "Id": "volcano-rails",
+                        "NameKey": "step.ginger.volcano.name",
+                        "DescriptionKey": "step.ginger.volcano.description",
+                        "Gold": 90000,
+                        "WaitDays": 7,
+                        "Items": [
+                            { "ItemId": "(O)336", "Count": 35 },
+                            { "ItemId": "(O)337", "Count": 20 },
+                            { "ItemId": "(O)848", "Count": 15 },
+                            { "ItemId": "(O)852", "Count": 5 }
+                        ]
+                    },
+                    {
+                        "Id": "install-link",
+                        "NameKey": "step.ginger.install.name",
+                        "DescriptionKey": "step.ginger.install.description",
+                        "Gold": 100000,
+                        "WaitDays": 7,
+                        "Items": [
+                            { "ItemId": "(O)336", "Count": 40 },
+                            { "ItemId": "(O)337", "Count": 20 },
+                            { "ItemId": "(O)848", "Count": 10 },
+                            { "ItemId": "(O)852", "Count": 5 },
+                            { "ItemId": "(O)787", "Count": 10 },
+                            { "ItemId": "(O)74", "Count": 5 },
+                            { "ItemId": "(O)851", "Count": 10 }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
